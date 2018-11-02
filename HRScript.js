@@ -14,7 +14,7 @@ $.ajax(
     error:function()
     {
         //if there is an error aapend a 'none avaliable' option
-        $select.html('<option id="-1">NONE AVAILABLE</option>');
+      $('#DeptSelect').append('<option id="-1">NONE AVAILABLE</option>');
     }
 })
 
