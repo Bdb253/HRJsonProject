@@ -1,6 +1,6 @@
 $.ajax(
 {
-    url: 'https://raw.githubusercontent.com/Bdb253/HRJsonProject/master/DeptData.json',
+    url: 'https://bdb253.github.io/HRJsonProject/DeptData.json',
     dataType: 'json',
     success:function(data)
     {
@@ -41,7 +41,7 @@ function employeeRelations(id)
     //display section header
     $('#result1').append("<h2>Employment Relations</h2>");
 
-    $.getJSON('https://raw.githubusercontent.com/Bdb253/HRJsonProject/master/DeptData.json', function(data)
+    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
         $.each(data, function(key, val)
         {
@@ -59,7 +59,7 @@ function compensation(id)
     //display section header
     $('#result2').append("<h2>Compensation</h2>");
 
-    $.getJSON('https://raw.githubusercontent.com/Bdb253/HRJsonProject/master/DeptData.json', function(data)
+    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
         $.each(data, function(key, val)
         {
@@ -76,7 +76,7 @@ function employment(id)
     //display section header
     $('#result3').append("<h2>Employment</h2>");
 
-    $.getJSON('https://raw.githubusercontent.com/Bdb253/HRJsonProject/master/DeptData.json', function(data)
+    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
         $.each(data, function(key, val)
         {
@@ -94,7 +94,7 @@ function employeePay(id)
     //display section header
     $('#result4').append("<h2>Employee Pay Services</h2>");
 
-    $.getJSON('https://raw.githubusercontent.com/Bdb253/HRJsonProject/master/DeptData.json', function(data)
+    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
         $.each(data, function(key, val)
         {
