@@ -54,7 +54,7 @@ function employeeRelations(id)
             if(id == val.DeptDescr)
             {
               var person1 = '<p>' + val["Employee Relations1"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var preson2 = '<p>' + val["Employee Relations2"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              var person2 = '<p>' + val["Employee Relations2"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
               $('#result1').append(person1 + '<br>' + person2);
             }
         });
@@ -79,7 +79,7 @@ function compensation(id)
             if(id == val.DeptDescr)
             {
               var person1 = '<p>' + val.Compensation1 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var preson2 = '<p>' + val.Compensation2 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              var person2 = '<p>' + val.Compensation2 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
               $('#result2').append(person1 + '<br>' + person2);
                 //$('#result2').append('<p>' + val.Compensation1 + '<br>' + val.Compensation2 + '</p>');
             }
@@ -112,7 +112,7 @@ function employment(id)
             if(id == val.DeptDescr)
             {
               var person1 = '<p>' + val.Employment1 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var preson2 = '<p>' + val.Employment3 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              var person2 = '<p>' + val.Employment3 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
               $('#result3').append(person1 + '<br>' + person2);
                 //$('#result3').append('<p>' + val.Employment1 + '<br>' + val.Employment3 + '</p>');
             }
@@ -149,7 +149,7 @@ function employeePay(id)
             if(id == val.DeptDescr)
             {
               var person1 = '<p>' + val["Employee Pay Services1"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var preson2 = '<p>' + val["Employee Pay Services2"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              var person2 = '<p>' + val["Employee Pay Services2"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
               $('#result4').append(person1 + '<br>' + person2);
                 //$('#result4').append('<p>' + val["Employee Pay Services1"] + '<br>' + val["Employee Pay Services2"] + '</p>');
             }
