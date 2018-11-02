@@ -113,7 +113,7 @@ function employment(id)
             {
               var person1 = '<p>' + val.Employment1 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
               var preson2 = '<p>' + val.Employment3 + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              $('#result2').append(person1 + '<br>' + person2);
+              $('#result3').append(person1 + '<br>' + person2);
                 //$('#result3').append('<p>' + val.Employment1 + '<br>' + val.Employment3 + '</p>');
             }
         });
@@ -140,7 +140,7 @@ function employeePay(id)
     'Online Time Processing' +
     'Employee pay discrepancies'+
     'New Employee Hiring Packet Processing (Hire Xpress)' +
-    'Off Cycle Check Processing');
+    'Off Cycle Check Processing</p>');
 
     $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
@@ -148,7 +148,10 @@ function employeePay(id)
         {
             if(id == val.DeptDescr)
             {
-                $('#result4').append('<p>' + val["Employee Pay Services1"] + '<br>' + val["Employee Pay Services2"] + '</p>');
+              var person1 = '<p>' + val["Employee Pay Services1"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              var preson2 = '<p>' + val["Employee Pay Services2"] + '<br>' +'tile'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+              $('#result4').append(person1 + '<br>' + person2);
+                //$('#result4').append('<p>' + val["Employee Pay Services1"] + '<br>' + val["Employee Pay Services2"] + '</p>');
             }
         });
     });
