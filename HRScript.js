@@ -1,25 +1,58 @@
+/*
+Author: Bowen Boyd
+File: HRScript.js
+Description: This script is to manage the extensive HR Contact Information found
+on https://in.nau.edu/human-resources/contact-us/. The information is pulled
+from a json file that is created from a Excel sheet exported as a csv. Using
+ajax changes to the drop down populate correct contact information without
+having to reload the page.
+*/
+
+/*
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Needs to be updated when put on a site. can be the wordpress media library:
+        upload script to site like a file and get its url -->
+        <script type="text/javascript" src="/HRScript.js"></script>
+    </head>
+
+<h1>HR Department Contact Form</h1>
+<body>
+    <label>Department: </label>
+    <select id="DeptSelect" style="width:300px;" name="Department Select" onchange=showInfo()>
+        <option>Select a Department</option>
+    </select>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+</body>
+</html>
+*/
 $.ajax(
-{
+  {
+    //needs to be changed to where the json file is being uploaded on the server
     url: 'https://bdb253.github.io/HRJsonProject/DeptData.json',
     dataType: 'json',
     success:function(data)
     {
-        //iterate over the data and append a selet option
-        $.each(data, function(key, val)
-        {
-            var option = $('<option id="' + val.DeptID + '">' + val.DeptDescr + '</option>');
-            $('#DeptSelect').append(option);
-        })
+      //iterate over the data and append a selet option
+      $.each(data, function(key, val)
+      {
+        var option = $('<option id="' + val.DeptID + '">' + val.DeptDescr + '</option>');
+        $('#DeptSelect').append(option);
+      })
     },
     error:function()
     {
-        //if there is an error aapend a 'none avaliable' option
+      //if there is an error aapend a 'none avaliable' option
       $('#DeptSelect').append('<option id="-1">NONE AVAILABLE</option>');
     }
-})
+  })
 
-function showInfo()
-{
+  function showInfo()
+  {
     //clear previous results
     $('#result1').html('');
     $('#result2').html('');
@@ -34,10 +67,10 @@ function showInfo()
     compensation(id)
     employment(id);
     employeePay(id);
-}
+  }
 
-function employeeRelations(id)
-{
+  function employeeRelations(id)
+  {
     //display section header
     $('#result1').append("<h2>Employment Relations</h2>"+
     '<ul><li>Problem solving for employees and managers on Human Resource issues</li>'+
@@ -49,21 +82,22 @@ function employeeRelations(id)
 
     $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
-        $.each(data, function(key, val)
+      $.each(data, function(key, val)
+      {
+        //dispaly the correct people based off drop down
+        if(id == val.DeptDescr)
         {
-            if(id == val.DeptDescr)
-            {
-              var person1 = '<p>' + val["Employee Relations1"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var person2 = '<p>' + val["Employee Relations2"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              $('#result1').append(person1 + '<br>' + person2);
-            }
-        });
+          var person1 = '<p>' + val["Employee Relations1"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          var person2 = '<p>' + val["Employee Relations2"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          $('#result1').append(person1 + '<br>' + person2);
+        }
+      });
 
     });
-}
+  }
 
-function compensation(id)
-{
+  function compensation(id)
+  {
     //display section header
     $('#result2').append("<h2>Compensation</h2>" +
     '<ul><li>Special assignments</li>'+
@@ -74,21 +108,21 @@ function compensation(id)
 
     $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
-        $.each(data, function(key, val)
+      $.each(data, function(key, val)
+      {
+        //dispaly the correct people based off drop down
+        if(id == val.DeptDescr)
         {
-            if(id == val.DeptDescr)
-            {
-              var person1 = '<p>' + val.Compensation1 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var person2 = '<p>' + val.Compensation2 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              $('#result2').append(person1 + '<br>' + person2);
-                //$('#result2').append('<p>' + val.Compensation1 + '<br>' + val.Compensation2 + '</p>');
-            }
-        })
+          var person1 = '<p>' + val.Compensation1 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          var person2 = '<p>' + val.Compensation2 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          $('#result2').append(person1 + '<br>' + person2);
+        }
+      })
     });
-}
+  }
 
-function employment(id)
-{
+  function employment(id)
+  {
     //display section header
     $('#result3').append("<h2>Employment</h2>" +
     '<p>Hiring process for staff' +
@@ -107,22 +141,22 @@ function employment(id)
 
     $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
     {
-        $.each(data, function(key, val)
+      $.each(data, function(key, val)
+      {
+        //dispaly the correct people based off drop down
+        if(id == val.DeptDescr)
         {
-            if(id == val.DeptDescr)
-            {
-              var person1 = '<p>' + val.Employment1 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var person2 = '<p>' + val.Employment3 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              $('#result3').append(person1 + '<br>' + person2);
-                //$('#result3').append('<p>' + val.Employment1 + '<br>' + val.Employment3 + '</p>');
-            }
-        });
+          var person1 = '<p>' + val.Employment1 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          var person2 = '<p>' + val.Employment3 + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          $('#result3').append(person1 + '<br>' + person2);
+        }
+      });
     });
 
-}
+  }
 
-function employeePay(id)
-{
+  function employeePay(id)
+  {
     //display section header
     $('#result4').append("<h2>Employee Pay Services</h2>" +
     '<p>Employee Pay Questions' +
@@ -142,17 +176,18 @@ function employeePay(id)
     'New Employee Hiring Packet Processing (Hire Xpress)' +
     'Off Cycle Check Processing</p>');
 
-    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json', function(data)
+    $.getJSON('https://bdb253.github.io/HRJsonProject/DeptData.json',
+    function(data)
     {
-        $.each(data, function(key, val)
+      $.each(data, function(key, val)
+      {
+        //dispaly the correct people based off drop down
+        if(id == val.DeptDescr)
         {
-            if(id == val.DeptDescr)
-            {
-              var person1 = '<p>' + val["Employee Pay Services1"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              var person2 = '<p>' + val["Employee Pay Services2"] + '<br>' +'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
-              $('#result4').append(person1 + '<br>' + person2);
-                //$('#result4').append('<p>' + val["Employee Pay Services1"] + '<br>' + val["Employee Pay Services2"] + '</p>');
-            }
-        });
+          var person1 = '<p>' + val["Employee Pay Services1"] + '<br>' + 'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          var person2 = '<p>' + val["Employee Pay Services2"] + '<br>' + 'title'+ '<br>' + 'email' + '<br>' + 'phone' + '</p>';
+          $('#result4').append(person1 + '<br>' + person2);
+        }
+      });
     });
-}
+  }
