@@ -30,6 +30,7 @@ having to reload the page.
 </body>
 </html>
 */
+
 $.ajax(
   {
     //needs to be changed to where the json file is being uploaded on the server
