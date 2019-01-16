@@ -10,9 +10,7 @@ spreadsheet is updated the site in turn will automaticly update.
 $.ajax(
   {
     //needs to be changed to where the json file is being uploaded on the server
-    url: 'https://bdb253.github.io/HRJsonProject/DeptDataLGS.json.php',
-    dataType: 'json',
-    success:function(data)
+  $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/2PACX-1vROb0Zy_70qkx0aE8UD68rBFX6c7q256Dbi7dWrisx7fWf9c2FTkP-bB3-7PNv9ESZI8laMsLXgWvgv/od6/public/values?alt=json"), function(data)
     {
       //iterate over the data and append a selet option
       $.each(data, function(key, val)
@@ -20,11 +18,6 @@ $.ajax(
         var option = $('<option id="' + val.DeptID + '">' + val.DeptDescr + '</option>');
         $('#DeptSelect').append(option);
       })
-    },
-    error:function()
-    {
-      //if there is an error aapend a 'none avaliable' option
-      $('#DeptSelect').append('<option id="-1">NONE AVAILABLE</option>');
     }
   })
 
