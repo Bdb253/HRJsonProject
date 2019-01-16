@@ -46,10 +46,12 @@ $.ajax(
     }
 
     // Print it out as JSON
-    //echo json_encode($newArray);
+    echo json_encode($newArray);
 
     $jsonobject = json_encode($newArray);
 
+
+    // Start of HR dropdown code
     $.getJSON(jsonobject, function(data)
     {
       //iterate over the data and append a selet option
