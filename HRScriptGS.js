@@ -1,10 +1,11 @@
 $.ajax(
   {
+    //google spreadsheets to json http://www.ravelrumba.com/blog/json-google-spreadsheets/
+    $feed = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vROb0Zy_70qkx0aE8UD68rBFX6c7q256Dbi7dWrisx7fWf9c2FTkP-bB3-7PNv9ESZI8laMsLXgWvgv/pub?gid=1055648349&single=true&output=csv';\
+
     // Arrays we'll use later
     $keys = array();
     $newArray = array();
-
-    $file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vROb0Zy_70qkx0aE8UD68rBFX6c7q256Dbi7dWrisx7fWf9c2FTkP-bB3-7PNv9ESZI8laMsLXgWvgv/pub?gid=1055648349&single=true&output=csv";
 
     // Function to convert CSV into associative array
     function csvToArray($file, $delimiter) {
