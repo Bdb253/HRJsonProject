@@ -52,5 +52,4 @@
     // Print it out as JSON
     echo json_encode($newArray);
 
-    $jsonobject = json_encode($newArray);
 ?>
