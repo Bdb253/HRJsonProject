@@ -10,7 +10,7 @@ spreadsheet
 $.ajax(
   {
     //needs to be changed to where the json file is being uploaded on the server
-    url: 'https://script.googleusercontent.com/a/macros/nau.edu/echo?user_content_key=lRqVvWfaRqhXurFL_O4-dec5k-W3l5cUeEFqAjseXxLK8to9t-GtSaCrCXHAEKd2jNkfBEIlXb9vIy1IabaFIUXkL-vs1usCOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC5nEHEltmBZE2DLGwV8tFz08ZEe00BtbW38lgEayYjsYbqSZxRB_9HXNoNRUqcNiqjJbARdBq-Bm17mvRHG_1ewVt72GepqXttBuq4IBdjRALzqirEK6O1Ffm5gZUCa9paKdY2Tb4qgA4rxPKQCWl1c2Hto9KGZUarpnbUzmGetDk36EIFXzp6zEMp8TchTdTIE5ZvEyIz3iYldxTCVoLb&lib=M7OO09pfGNQD9igEAo4bouJoiE_6Oxspk',
+    url: 'https://spreadsheets.google.com/feeds/list/1I7hl6KczK4mLzWUzlrPoTXeuFFLFUuIYI-TzVb_6Dgs/1/public/values?alt=json',
     dataType: 'json',
     success:function(data)
     {
