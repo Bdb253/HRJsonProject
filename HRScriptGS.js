@@ -17,7 +17,7 @@ $.ajax(
       //iterate over the data and append a selet option
       $.each(data, function(key, val)
       {
-        console.log(va;.DeptID);
+        console.log(val.DeptID);
         var option = $('<option id="' + val.DeptID + '">' + val.DeptDescr + '</option>');
         $('#DeptSelect').append(option);
       })
