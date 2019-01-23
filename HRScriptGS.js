@@ -10,7 +10,7 @@ spreadsheet
 $.ajax(
   {
     //needs to be changed to where the json file is being uploaded on the server
-    url: 'https://bdb253.github.io/HRJsonProject/DeptDataLGS.json.php',
+    url: 'https://sheets.googleapis.com/v4/spreadsheets/1I7hl6KczK4mLzWUzlrPoTXeuFFLFUuIYI-TzVb_6Dgs/values/Website%20Department%20Contact%20List?key=AIzaSyAxdFmyHqM2vHU4On0Exi2IZciOphcb2vU',
     dataType: 'json',
     success:function(data)
     {
