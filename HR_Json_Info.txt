@@ -1,0 +1,7 @@
+Google Sheet: https://docs.google.com/spreadsheets/d/1I7hl6KczK4mLzWUzlrPoTXeuFFLFUuIYI-TzVb_6Dgs/edit?usp=sharing
+API Key: AIzaSyAxdFmyHqM2vHU4On0Exi2IZciOphcb2vU
+Range: Website%20Department%20Contact%20List
+
+Blank Call: https://sheets.googleapis.com/v4/spreadsheets/SPREADSHEET_ID/values/RANGE?key=API_KEY
+
+Final Call: https://sheets.googleapis.com/v4/spreadsheets/1I7hl6KczK4mLzWUzlrPoTXeuFFLFUuIYI-TzVb_6Dgs/values/Website%20Department%20Contact%20List?key=AIzaSyAxdFmyHqM2vHU4On0Exi2IZciOphcb2vU
