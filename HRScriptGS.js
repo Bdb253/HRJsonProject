@@ -10,7 +10,7 @@ spreadsheet
 $.ajax(
   {
     //needs to be changed to where the json file is being uploaded on the server
-    url: 'https://spreadsheets.google.com/feeds/list/1I7hl6KczK4mLzWUzlrPoTXeuFFLFUuIYI-TzVb_6Dgs/1/public/values?alt=json',
+    url: 'https://sheets.googleapis.com/v4/spreadsheets/spreadsheetId/values/Sheet1!A1:AK242',
     dataType: 'json',
     success:function(data)
     {
